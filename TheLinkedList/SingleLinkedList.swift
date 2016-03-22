@@ -11,15 +11,18 @@ import UIKit
 
 class SingleLinkedList<T> {
     
-    var size : Int = 0
-    var head : Node<T> = Node<T>()
-    var tail : Node<T> = Node<T>()
+    var size : Int
+    var head : Node<T>!
+    var tail : Node<T>!
     
-    init(){ }
+    init(){
+        size = 0
+    }
     
     func clear(){
-        head = Node<T>()
-        tail = head
+        head = nil
+        tail = nil
+        size = 0
     }
     
     // appends a new node to the end of the linked list
