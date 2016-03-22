@@ -10,17 +10,20 @@ import Foundation
 
 class Node<T>{
     
-    var element : T
-    var nextNode : Node<T>!
+    var element : T? = nil
+    var nextNode : Node<T>? = nil
     
     //Init's
+    init(){
+        
+    }
+    
     init(e : T){
         element = e
-        nextNode = nil
     }
     
     // Single Link List Functions
     func next() -> Node<T>{
-        return nextNode
+        return nextNode!
     }
 }

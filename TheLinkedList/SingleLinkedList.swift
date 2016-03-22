@@ -11,18 +11,15 @@ import UIKit
 
 class SingleLinkedList<T> {
     
-    var size : Int
-    var head : Node<T>!
-    var tail : Node<T>!
+    var size : Int = 0
+    var head : Node<T> = Node<T>()
+    var tail : Node<T> = Node<T>()
     
-    init(){
-        size = 0
-    }
+    init(){ }
     
     func clear(){
-        head = nil
-        tail = nil
-        size = 0
+        head = Node<T>()
+        tail = head
     }
     
     // appends a new node to the end of the linked list
@@ -41,7 +38,7 @@ class SingleLinkedList<T> {
     // remove the last and return
     func remove(){
         var walkerNode = head
-        while (walkerNode.nextNode.nextNode != nil) {
+        while (walkerNode.nextNode!.nextNode != nil) {
             walkerNode = walkerNode.next()
         }
         walkerNode.nextNode = nil
